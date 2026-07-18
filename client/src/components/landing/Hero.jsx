@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import xLogo from "/x.png";
 import linkedinLogo from "/linkedin.png";
-
-import heroImage from "/heroimage.png"
+import heroImage from "/heroimage.png";
 
 import Button from "../ui/Buttton";
-import Stats from "./Stats";
-import { Link } from "react-router-dom";
 
 const logos = [xLogo, linkedinLogo];
 
@@ -25,18 +23,20 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="bg-background pt-20">
-      <div className="mx-auto max-w-6xl px-6 text-center">
-        <h1 className="text-7xl font-bold leading-none tracking-[-0.04em] text-heading">
+    <section className="bg-background pt-12 sm:pt-16 lg:pt-20">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 text-center">
+
+        <h1 className="text-4xl font-bold leading-tight tracking-[-0.04em] text-heading sm:text-5xl md:text-6xl lg:text-7xl lg:leading-none">
+
           Turn Ideas into{" "}
 
-          <span className="relative inline-flex h-16 w-16 items-center justify-center overflow-hidden align-middle mx-2">
+          <span className="relative mx-1 inline-flex h-10 w-10 items-center justify-center overflow-hidden align-middle sm:mx-2 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16">
             <AnimatePresence mode="wait">
               <motion.img
                 key={currentLogo}
                 src={logos[currentLogo]}
                 alt="Social Logo"
-                className="absolute h-20 w-20 object-contain"
+                className="absolute h-full w-full object-contain"
                 initial={{
                   opacity: 0,
                   y: 40,
@@ -60,8 +60,7 @@ export default function Hero() {
                 }}
                 transition={{
                   type: "tween",
-                  stiffness: 100,
-                  damping: 20,
+                  duration: 0.35,
                 }}
               />
             </AnimatePresence>
@@ -72,13 +71,13 @@ export default function Hero() {
           in Seconds, Not Hours
         </h1>
 
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-muted">
+        <p className="mx-auto mt-6 max-w-xl text-base leading-7 text-muted sm:max-w-2xl sm:text-lg sm:leading-8">
           Just drop your idea. Our AI transforms it into engaging,
           ready-to-publish posts in seconds, optimized for maximum reach and
           audience engagement.
         </p>
 
-        <div className="mt-10 flex justify-center">
+        <div className="mt-8 flex justify-center sm:mt-10">
           <Link to="/dashbord">
             <Button className="group">
               Get Started
@@ -91,22 +90,25 @@ export default function Hero() {
               </span>
             </Button>
           </Link>
-
         </div>
       </div>
 
-      <div className="mx-auto max-w-6xl flex  mt-10 justify-center">
-        <img src={heroImage} alt="hero" className=" object-cover w-250 " srcset="" />
-
+      {/* Hero Image */}
+      <div className="mx-auto mt-10 flex max-w-7xl justify-center px-4 sm:px-6 lg:mt-14">
+        <img
+          src={heroImage}
+          alt="Hero"
+          className="
+            w-full
+            max-w-sm
+            sm:max-w-xl
+            md:max-w-3xl
+            lg:max-w-5xl
+            xl:max-w-6xl
+            object-contain
+          "
+        />
       </div>
-      <div className="mx-auto max-w-6xl flex  mt-10 justify-center">
-
-
-      </div>
-
-
-
-
     </section>
   );
 }

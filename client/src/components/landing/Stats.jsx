@@ -22,12 +22,12 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <section className="py-4 sm:py-8 lg:py-10">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
 
-        {/* Top Text */}
+        {/* Top */}
         <div className="text-center">
-          <p className="text-sm text-text-light">
+          <p className="text-sm sm:text-base text-text-light">
             Loved by{" "}
             <span className="font-semibold text-text">
               50,000+ creators
@@ -35,20 +35,20 @@ export default function Stats() {
             worldwide
           </p>
 
-          <div className="mt-4 flex items-center justify-center gap-2">
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
             <div className="flex text-yellow-500">
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  size={14}
+                  size={16}
                   fill="currentColor"
                   strokeWidth={0}
                 />
               ))}
             </div>
 
-            <span className="text-sm text-text">
-              <strong>4.9/5</strong>
+            <span className="text-sm font-semibold text-text">
+              4.9/5
             </span>
 
             <span className="text-sm text-text-light">
@@ -57,18 +57,19 @@ export default function Stats() {
           </div>
         </div>
 
-        {/* Stats Card */}
+        {/* Stats */}
         <div
           className="
-            mt-12
+            mt-10
             overflow-hidden
-            rounded-md
-            border border-border
+            rounded-2xl
+            border
+            border-border
             bg-card
             shadow-[0_20px_60px_rgba(0,0,0,0.05)]
           "
         >
-          <div className="grid grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 divide-x divide-y divide-border lg:grid-cols-4 lg:divide-y-0">
             {stats.map((item) => (
               <StatCard
                 key={item.label}
