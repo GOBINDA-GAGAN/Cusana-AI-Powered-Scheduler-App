@@ -9,6 +9,7 @@ import heroImage from "/heroimage.png"
 
 import Button from "../ui/Buttton";
 import Stats from "./Stats";
+import { Link } from "react-router-dom";
 
 const logos = [xLogo, linkedinLogo];
 
@@ -78,16 +79,19 @@ export default function Hero() {
         </p>
 
         <div className="mt-10 flex justify-center">
-          <Button className="group">
-            Get Started
+          <Link to="/dashbord">
+            <Button className="group">
+              Get Started
 
-            <span className="ml-2 flex h-6 w-6 items-center justify-center rounded-full bg-white/15 transition-all duration-300 group-hover:bg-white/20">
-              <ArrowRight
-                size={15}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </span>
-          </Button>
+              <span className="ml-2 flex h-6 w-6 items-center justify-center rounded-full bg-white/15 transition-all duration-300 group-hover:bg-white/20">
+                <ArrowRight
+                  size={15}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </span>
+            </Button>
+          </Link>
+
         </div>
       </div>
 
@@ -96,7 +100,7 @@ export default function Hero() {
 
       </div>
       <div className="mx-auto max-w-6xl flex  mt-10 justify-center">
-       
+
 
       </div>
 
