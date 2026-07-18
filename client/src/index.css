@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* ==========================================
+   LIGHT THEME
+========================================== */
+
+:root {
+  color-scheme: light;
+
+  /* Background */
+  --background: #ffffff;
+  --surface: #fafafa;
+  --card: #ffffff;
+
+  /* Text */
+  --foreground: #111111;
+  --heading: #09090b;
+  --muted: #6b7280;
+  --placeholder: #9ca3af;
+
+  /* Brand */
+  --primary: #111111;
+  --primary-hover: #000000;
+  --secondary: #f3f4f6;
+  --secondary-hover: #e5e7eb;
+
+  /* Border */
+  --border: #e5e7eb;
+  --border-hover: #d1d5db;
+
+  /* Status */
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #3b82f6;
+
+  /* Input */
+  --input: #ffffff;
+  --input-border: #d4d4d8;
+  --ring: #111111;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.05);
+  --shadow-md: 0 8px 24px rgba(0,0,0,.08);
+  --shadow-lg: 0 20px 50px rgba(0,0,0,.12);
+
+  /* Radius */
+  --radius-sm: .5rem;
+  --radius-md: .75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
+
+/* ==========================================
+   DARK THEME
+========================================== */
+
+.dark {
+  color-scheme: dark;
+
+  /* Background */
+  --background: #09090b;
+  --surface: #111111;
+  --card: #18181b;
+
+  /* Text */
+  --foreground: #fafafa;
+  --heading: #ffffff;
+  --muted: #a1a1aa;
+  --placeholder: #71717a;
+
+  /* Brand */
+  --primary: #ffffff;
+  --primary-hover: #f4f4f5;
+  --secondary: #27272a;
+  --secondary-hover: #3f3f46;
+
+  /* Border */
+  --border: #27272a;
+  --border-hover: #3f3f46;
+
+  /* Status */
+  --success: #22c55e;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --info: #60a5fa;
+
+  /* Input */
+  --input: #18181b;
+  --input-border: #3f3f46;
+  --ring: #ffffff;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.35);
+  --shadow-md: 0 8px 24px rgba(0,0,0,.45);
+  --shadow-lg: 0 20px 50px rgba(0,0,0,.6);
+}
+
+/* ==========================================
+   Tailwind Theme Mapping
+========================================== */
+
+@theme {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+
+  --color-foreground: var(--foreground);
+  --color-heading: var(--heading);
+  --color-muted: var(--muted);
+  --color-placeholder: var(--placeholder);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+
+  --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+
+  --color-input: var(--input);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+}
+
+/* ==========================================
+   Base Styles
+========================================== */
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  transition: background-color .3s ease, color .3s ease;
+  font-family: Inter, sans-serif;
+}
+
+* {
+  border-color: var(--border);
+}
