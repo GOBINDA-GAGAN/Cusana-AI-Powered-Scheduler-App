@@ -39,29 +39,32 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="bg-background py-16 sm:py-20 lg:py-24">
+    <section className="bg-background py-12 sm:py-16 lg:py-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <div className="text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-xs font-medium text-text shadow-sm sm:text-sm">
+
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-[10px] font-medium text-text shadow-sm sm:px-4 sm:py-2 sm:text-xs lg:text-sm">
             • FAQ
           </span>
 
-          <h2 className="mt-6 text-3xl font-bold leading-tight text-text sm:text-4xl lg:text-6xl">
+          <h2 className="mt-5 text-2xl font-bold leading-tight text-text sm:text-3xl md:text-4xl lg:mt-6 lg:text-6xl">
             Questions? We've Got
             <br />
             Answers.
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-text-light sm:mt-6 sm:text-lg sm:leading-8">
-            Everything you need to know before getting started with Scheduler
-            AI.
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-text-light sm:mt-5 sm:text-base sm:leading-7 lg:mt-6 lg:max-w-2xl lg:text-lg lg:leading-8">
+            Everything you need to know before getting started with
+            Scheduler AI.
           </p>
+
         </div>
 
-        {/* FAQ List */}
-        <div className="mt-12 overflow-hidden rounded-2xl border border-border bg-card shadow-xl sm:mt-16 sm:rounded-3xl">
+        {/* FAQ */}
+        <div className="mt-10 overflow-hidden rounded-xl border border-border bg-card shadow-xl sm:mt-14 sm:rounded-2xl lg:mt-16 lg:rounded-3xl">
+
           {faqs.map((faq, index) => {
             const open = openIndex === index;
 
@@ -72,15 +75,29 @@ export default function FAQ() {
               >
                 <button
                   onClick={() => setOpenIndex(open ? -1 : index)}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left transition-colors hover:bg-white/5 sm:px-8 sm:py-6"
+                  className="flex w-full items-center justify-between gap-3 px-4 py-4 text-left transition-colors hover:bg-white/5 sm:gap-4 sm:px-6 sm:py-5 lg:px-8 lg:py-6"
                 >
-                  <h3 className="flex-1 text-base font-semibold leading-6 text-text sm:text-lg">
+
+                  <h3 className="flex-1 text-sm font-semibold leading-6 text-text sm:text-base lg:text-lg">
                     {faq.question}
                   </h3>
 
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border sm:h-10 sm:w-10">
-                    {open ? <Minus size={18} /> : <Plus size={18} />}
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border sm:h-9 sm:w-9 lg:h-10 lg:w-10">
+
+                    {open ? (
+                      <Minus
+                        size={16}
+                        className="sm:h-[18px] sm:w-[18px]"
+                      />
+                    ) : (
+                      <Plus
+                        size={16}
+                        className="sm:h-[18px] sm:w-[18px]"
+                      />
+                    )}
+
                   </div>
+
                 </button>
 
                 <AnimatePresence initial={false}>
@@ -103,7 +120,7 @@ export default function FAQ() {
                       }}
                       className="overflow-hidden"
                     >
-                      <p className="px-5 pb-5 text-sm leading-7 text-text-light sm:px-8 sm:pb-6 sm:text-base">
+                      <p className="px-4 pb-4 text-xs leading-6 text-text-light sm:px-6 sm:pb-5 sm:text-sm lg:px-8 lg:pb-6 lg:text-base lg:leading-7">
                         {faq.answer}
                       </p>
                     </motion.div>
@@ -112,7 +129,9 @@ export default function FAQ() {
               </div>
             );
           })}
+
         </div>
+
       </div>
     </section>
   );
