@@ -1,6 +1,6 @@
 import React from "react";
 import { Eye, EyeOff, ChevronRight, Mail, Lock, Check } from "lucide-react";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Card({ title, value, delta, className = "" }) {
     return (
@@ -24,10 +24,9 @@ function Card({ title, value, delta, className = "" }) {
 
 export default function LoginSplitPage() {
     const [showPassword, setShowPassword] = React.useState(false);
-
     return (
         <div className="min-h-screen bg-background text-foreground">
-            <div className="mx-auto flex min-h-screen max-w-[1440px] flex-col lg:flex-row">
+            <div className="mx-auto flex min-h-screen max-w-360 flex-col lg:flex-row">
                 <div className="flex w-full flex-1 items-center justify-center px-6 py-10 lg:px-10">
                     <div className="w-full max-w-md">
                         <div className="mb-8 flex justify-center">
@@ -135,45 +134,6 @@ export default function LoginSplitPage() {
                         </div>
                     </div>
                 </div>
-
-                {/* <div className="relative w-full overflow-hidden bg-surface px-6 py-8 lg:w-[45%] lg:px-8">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.08),_transparent_35%),linear-gradient(180deg,_rgba(255,255,255,0.02),_rgba(255,255,255,0))]" />
-          <div className="relative h-full rounded-3xl border border-white/10 bg-white/5 p-5 shadow-2xl shadow-black/30 backdrop-blur-xl">
-            <div className="grid h-full grid-rows-[auto_1fr_auto] gap-6">
-              <div className="grid grid-cols-2 gap-4">
-                <Card title="Sales Revenue" value="$ 5.832" delta="Your revenue increased" />
-                <Card title="Customer Segmentation" value="2.758" delta="Active customers" />
-                <Card title="Closed Won by Type" value="$ 11.680" delta="Closed deals up" />
-                <Card title="Conversion Rates" value="75.3%" delta="Traffic improved" />
-              </div>
-
-              <div className="flex items-end">
-                <div className="max-w-xl">
-                  <h2 className="text-3xl font-semibold tracking-tight text-white">
-                    Transform Data into Cool Insights
-                  </h2>
-                  <p className="mt-3 max-w-lg text-sm leading-6 text-white/55">
-                    Make informed decisions with Cusana&apos;s powerful analytics tools. Harness the power
-                    of data to drive your business forward with Cusana Analytics.
-                  </p>
-
-                  <div className="mt-8 flex gap-2">
-                    <span className="h-2.5 w-2.5 rounded-full bg-white" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-center gap-3 text-white/40">
-                <span className="inline-flex h-3 w-3 rounded-full bg-white/70" />
-                <span className="inline-flex h-2 w-2 rounded-full bg-white/20" />
-                <span className="inline-flex h-2 w-2 rounded-full bg-white/20" />
-              </div>
-            </div>
-          </div>
-        </div> */}
-
             </div>
         </div>
     );

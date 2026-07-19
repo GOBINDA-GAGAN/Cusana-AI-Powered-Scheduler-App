@@ -18,13 +18,6 @@ export default function DashboardLayout() {
     return (
         <div className="flex h-screen bg-background">
 
-            {/* Mobile Overlay */}
-            {isMobileMenuOpen && (
-                <div
-                    className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                />
-            )}
 
             {/* Sidebar */}
             <Sidebar

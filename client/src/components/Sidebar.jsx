@@ -34,10 +34,12 @@ const navItems = [
 
 export default function SidebarLayout({ isOpen, setisOpen }) {
 
+
+
     return (
         <div className="min-h-screen bg-background text-foreground lg:flex">
             <aside
-                className={`border-r border-border w-57.5 bg-card transition-all duration-300 ${isOpen ? " translate-x-0" : "-translate-x-0"}`}>
+                className={`border-r border-border w-57.5 bg-card transition-all duration-300  ${isOpen ? "hidden" : "visible"}`} >
                 <div className="flex h-screen flex-col">
                     <div className="flex items-center justify-between  bg-surface px-4 h-16 border-b">
                         <Link to="/" className="flex items-center gap-2">
@@ -97,6 +99,6 @@ export default function SidebarLayout({ isOpen, setisOpen }) {
                     </div>
                 </div>
             </aside>
-        </div>
+        </div >
     );
 }
